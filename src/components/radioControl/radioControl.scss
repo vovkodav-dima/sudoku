@@ -1,0 +1,58 @@
+@import "src/variables";
+
+.radioControlRoot {
+  color: #313131;
+  padding: 22px 0;
+
+  .radioControlLabel {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      display: block;
+      cursor: pointer;
+      transition: transform .5s, box-shadow 1s;
+      width: 20px;
+      height: 20px;
+      margin-right: 40px;
+      background: url("../../assets/radioOff.svg");
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 9px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      background: $primary;
+      transform: scale(0);
+      transition: all 0.2s ease-in-out;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    &:hover {
+      &:after {
+        transform: scale(3.6)
+      }
+
+      & + &:active {
+        transform: scale(0);
+      }
+    }
+  }
+
+  .radioControlInput {
+    display: none;
+
+    &:checked + .radioControlLabel {
+      &:before {
+        background: url("../../assets/radioOn.svg");
+      }
+    }
+  }
+}

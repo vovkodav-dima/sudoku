@@ -1,0 +1,54 @@
+@import './src/variables';
+
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  padding: 60px 75px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  min-width: 1029px;
+  min-height: 761px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 992px){
+    padding: 30px 15px;
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 60px;
+  right: 75px;
+  cursor: pointer;
+
+  path {
+    transition: 0.4s fill ease-in-out;
+  }
+
+  &:hover {
+    path {
+      fill: $primary;
+    }
+  }
+
+  @media screen and (max-width: 992px){
+    top: 30px;
+    right: 15px;
+  }
+}
